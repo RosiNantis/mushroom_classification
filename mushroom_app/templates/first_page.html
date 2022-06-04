@@ -1,0 +1,45 @@
+<!--Just type ! and press Enter to get a prefilled skeletal code of html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title> Mush-Room  </title> <!--Whatever is written under title is dispalyed on the tab of the webpage-->
+    <link rel="stylesheet" href="/static/style_first_page.css"/><!--linking css style sheet to html-->
+</head>
+
+
+<body>
+    <h1> {{name}} </h1> <!--Passing the jinja template, the value of name is passed from python file to html-->
+    
+    <br>
+    <form action="/camera"> <!--After clicking on submit button the routing is done on the /recommend-->
+        <button type="submit">Open Camera</button>
+        <!--script to add ENTER as a submit button as well-->
+    </form> 
+    <br>
+    <br>
+
+    <!--Creating a form for the user to input values through the webpage-->
+    <form action="/recommender"> <!--After clicking on submit button the routing is done on the /recommend-->
+        <button type="submit">Let's see what mushroom it is!!!</button>
+        <input type="file" accept="image/*" placeholder="" id="file" list="movie">
+
+    </form>   
+    <br>
+    <br>
+    <br>
+    <h2> Nature alone is antique, and the oldest art is a mushroom. </h2>
+    <a href="https://en.wikipedia.org/wiki/Thomas_Carlyle">
+        <h3>
+            - Thomas Carlyle -
+        </h3>
+    </a>
+
+
+
+</body>
+
+</html>
