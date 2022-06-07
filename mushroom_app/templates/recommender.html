@@ -18,67 +18,74 @@
     <h2>Mushroom Classification</h2>
 </header>
 <section class="fullWidthAndHeight">
-    <!--for doing any style changes to elements in ul referencing this tag by 
-    a class name style-->
-    <div class="text-table">
-        <h3>Prediction Table</h3>
+<nav class="blur">
+<div class="form-container">
+    <div class="text-wiki" style="text-align: center;height:520px;width:420px;border:4px solid black;overflow:auto;font-size: 30px;">
+        <h2> <u>Wikipedia summary</u> </h2>
+        <p class="text_wiki" id = "myText"> {{wiki_text}}</p>
+    </div>
+    <div class="text-wiki" style="text-align: center;height:520px;width:420px;border:4px solid black;overflow:auto;font-size: 30px;">
+        <h2> <u>Abstract NLP</u> </h2>
+        <p class="text_abstract" id = "myText"> {{nlp_abstract}}</p>
+    </div>
+    <div class="text-wiki" style="text-align: center;height:520px;width:420px;border:2px;overflow:auto;font-size: 30px;">
+        <p2> Wiki url. </p2>
+        <div style="text-align: center;font-family: fantasy , sans-serif;overflow:auto;font-size: 30px;">
+        <a href={{wiki_url}}> <p1> - {{prediction[0]}} - </p1> </a>
+        </div>
+    </div>
+</div>
+</nav>
+<article style="background-color: rgb(216, 225, 198);">
+<div class="images" >
+        <h2 ><u>Side-by-Side Image Gallery</u ></h2>
         <table >
             <tr>
-        <div class="prediction-table">
-            <ul class="style"> 
+                <img src={{image_directory}} alt="test" width="350" height="350">            
+                <p1>Test image</p1>           
+            </tr>
+            <tr>         
+        
+            <a href={{wiki_url}}>
+                <img src={{wiki_image_url}} alt="wiki" width="350" height="350">
+            </a>    
+            <p1>Wiki Prediction</p1>
+            </tr>
+        </table>
+</div>
+<br>
+<br>
+<div class="Tables" >
+    <h2><u>Prediction Table</u></h2>
+    <table class="text-table" >
+        <tr>
+            <p1>
+            <ul style="text-align: left;font-size: 30px;background-color: rgb(216, 225, 198);"> 
+                <p1><u>Mushroom Type</u></p1>
                 {% for predict in prediction %}
                 <li>{{predict}}</li>
                 {% endfor %}
-            </ul></div>
-            <ul class="style"> 
+            </ul></p1>
+        </tr>
+        <tr>
+            <p1>
+            <ul style="text-align:left;font-size: 30px;background-color: rgb(221, 230, 201);"> 
+                <p1><u>Prediction</u></p1>
                 {% for mushroom in kind %}
                 <li>{{mushroom}}</li>
                 {% endfor %}
-            </ul>
-            </tr>
-        </table>
-    </div>
-    <hr>
-    <div class="text-wiki">
-        <h3>Wikipedia summary </h3>
-        <div class="prediction-table">
-            <p class="text_wiki" id = "myText"> {{wiki_text}}</p></div>
-    </div>
-    <hr>
-    <div class="text-NLP">
-        <h3>NLP abstract  </h3>
-        <div class="prediction-table">
-            <p class="text_abstract" id = "myText"> {{nlp_abstract}}</p></div>
-    </div>
-    <hr>
-
-    <h2>Side-by-Side Image Gallery</h2>
-    <div class="photos" style="margin:0 -16px">
-      <div class="image-test">
-        <img src={{image_directory}} alt="test" width="500" height="270">
-      </div>
-      <div class="image-wiki">
-        <a href={{wiki_url}}>
-            <img src={{wiki_image_url}} alt="wiki" width="500" height="270">
-        </a>
-      </div>
-    </div>
-    <hr>
-    <a href='/'>Go Back to main</a>
-    
+            </ul></p1>
+        </tr>
+    </table>
+<div class = "back" style="text-align: left ; margin-right: 15cm; font-size: 30px; color: black;">
+    <a href='/'>Go Back to main page</a>
+</div>
+</div>
+</article>
 </section>
-
-<footer>
-    <footer>
-        <h4> "Wiki url." </h4>
-          <a href={{wiki_url}}>
-          
-              <h4>
-                  - {{prediction[0]}} -
-              </h4>
-          </a>
-        <p>Copyright &copy; 2022 Mush-Room app</p>
-    </footer>
+<footer style="position: fixed; height: 1.4cm;">
+        <p1>Copyright &copy; 2022 Mush-Room app</p1>
+</footer>
     
 </body>
 </html>

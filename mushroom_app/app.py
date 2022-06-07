@@ -1,5 +1,5 @@
 import re
-#from NLP_wiki_abstraction import give_abstract_text
+from NLP_wiki_abstraction import give_abstract_text
 from wikipedia_info import fetch_wiki_text, fetch_wiki_url, fetch_wiki_image
 from recommender import mushroom_classification, mushroom_depict
 from flask import Flask,render_template,request
@@ -35,12 +35,12 @@ def recommend():
     #test_image= mushroom_depict(test[0])
     wiki_image_url= fetch_wiki_image(prediction[0])
     wiki_text = fetch_wiki_text(prediction[0])
-    #nlp_abstract = give_abstract_text(wiki_text)
+    nlp_abstract = give_abstract_text(wiki_text)
     wiki_url = fetch_wiki_url(prediction[0])
     return  render_template(
         'recommender.html', mush_classified = mush_classified, wiki_text=wiki_text,
         wiki_url = wiki_url, prediction = prediction, wiki_image_url=wiki_image_url, 
-        image_directory = image_directory, kind = kind)#,nlp_abstract =nlp_abstract)
+        image_directory = image_directory, kind = kind,nlp_abstract =nlp_abstract)
 
 # Runs the app (main module)
 if __name__=='__main__':
