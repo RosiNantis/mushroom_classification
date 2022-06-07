@@ -43,7 +43,7 @@ def image_classification(image_path):
     pic_array = keras.preprocessing.image.img_to_array(image)
     image_batch = np.expand_dims(pic_array, axis=0)
     processed_image = keras.applications.mobilenet_v2.preprocess_input(image_batch)
-    model_ann=keras.models.load_model("../models/" + 'ResNet50V2_2la_0001r_60bs_10set' + ".h5")
+    model_ann=keras.models.load_model("../models/" + 'MobileNetV2_3la_0001r_60bs_10set_f' + ".h5")
     probs = model_ann.predict(processed_image)[0].tolist()
     zipped = sorted(list(zip(CLASSES, probs)), key=lambda x: x[1], reverse=True)
     image_class = [zipped[i][0] for i in range(len(zipped))]

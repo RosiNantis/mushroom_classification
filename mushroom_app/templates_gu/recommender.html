@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick your movie</title>
+    <link rel="stylesheet" href="/static/style_first_page.css"/> <!--linking css style sheet-->
+    <link rel="icon" href="data:,">
+</head>
+
+
+<body>
+    <!--jinja tag {{movie}} to access the python variables inside html page-->
+    <h1>Mushroom Classification</h1>
+    
+    
+    
+    <!--Content under script is a javascript function to display the confetti animation-->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // basic confetti animation
+        //confetti();
+
+        // sophisticated confetti animation
+        // https://www.kirilv.com/canvas-confetti/
+        var end = Date.now() + 15 * 1000;
+
+        // go Buckeyes!
+        var colors = ["#bb0000", "#ffffff"];
+
+        (function frame() {
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: colors,
+            });
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: colors,
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    </script>
+</body>
+</html>
