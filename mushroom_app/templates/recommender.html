@@ -7,50 +7,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick your movie</title>
-    <link rel="stylesheet" href="/static/style_first_page.css"/> <!--linking css style sheet-->
+    <link rel="stylesheet" href="../static/style_first_page.css"/><!--linking css style sheet to html-->
+    <link rel="icon" href="data:,">
 </head>
 
 
 <body>
-    <!--jinja tag {{movie}} to access the python variables inside html page-->
-    <h1>Mushroom Classification</h1>
+<header>
+    <img class="image-icon" icon="68" src="../static/icons8-pilze-64.png"></img>
+    <h2>Mushroom Classification</h2>
+</header>
+<section class="fullWidthAndHeight">
+    <!--for doing any style changes to elements in ul referencing this tag by 
+    a class name style-->
+    <div class="text-table">
+        <h3>Prediction Table</h3>
+        <table >
+            <tr>
+        <div class="prediction-table">
+            <ul class="style"> 
+                {% for predict in prediction %}
+                <li>{{predict}}</li>
+                {% endfor %}
+            </ul></div>
+            <ul class="style"> 
+                {% for mushroom in kind %}
+                <li>{{mushroom}}</li>
+                {% endfor %}
+            </ul>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class="text-wiki">
+        <h3>Wikipedia summary </h3>
+        <div class="prediction-table">
+            <p class="text_wiki" id = "myText"> {{wiki_text}}</p></div>
+    </div>
+    <hr>
+    <div class="text-NLP">
+        <h3>NLP abstract  </h3>
+        <div class="prediction-table">
+            <p class="text_abstract" id = "myText"> {{nlp_abstract}}</p></div>
+    </div>
+    <hr>
+
+    <h2>Side-by-Side Image Gallery</h2>
+    <div class="photos" style="margin:0 -16px">
+      <div class="image-test">
+        <img src={{image_directory}} alt="test" width="500" height="270">
+      </div>
+      <div class="image-wiki">
+        <a href={{wiki_url}}>
+            <img src={{wiki_image_url}} alt="wiki" width="500" height="270">
+        </a>
+      </div>
+    </div>
+    <hr>
+    <a href='/'>Go Back to main</a>
     
+</section>
+
+<footer>
+    <footer>
+        <h4> "Wiki url." </h4>
+          <a href={{wiki_url}}>
+          
+              <h4>
+                  - {{prediction[0]}} -
+              </h4>
+          </a>
+        <p>Copyright &copy; 2022 Mush-Room app</p>
+    </footer>
     
-    
-    <!--Content under script is a javascript function to display the confetti animation-->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script>
-        // basic confetti animation
-        //confetti();
-
-        // sophisticated confetti animation
-        // https://www.kirilv.com/canvas-confetti/
-        var end = Date.now() + 15 * 1000;
-
-        // go Buckeyes!
-        var colors = ["#bb0000", "#ffffff"];
-
-        (function frame() {
-            confetti({
-                particleCount: 2,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: colors,
-            });
-            confetti({
-                particleCount: 2,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: colors,
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        })();
-    </script>
 </body>
 </html>
