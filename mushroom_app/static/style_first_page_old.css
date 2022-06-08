@@ -1,0 +1,221 @@
+html, body{
+	height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	font-family: "Courier New", Courier, monospace;
+    background-color: lightblue;
+    overflow:visible !important;
+}
+
+header {
+  box-shadow: 0 0 10px black;
+  background-color: #666;
+  padding: 1px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+article {
+    color: white;
+    padding-bottom: 40px;
+    background-color: transparent;
+    width: 75%;
+    height: 100%;
+    right: 10px;
+    position: fixed;
+    display: flex;
+	overflow:hidden;
+    flex-direction: column;
+}
+
+.video-container{
+	overflow-y: auto;
+}
+nav {
+	position: fixed;
+    width: fit-content;
+    height: 100%;
+}
+.fullWidthAndHeight{
+	width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	 /* To put the background image covering the entire webpage */
+    background-image: url('mushroom_forest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+.image-icon{
+	height: fit-content;
+    padding: 10px;
+}
+/* Style the footer */
+footer {
+  box-shadow: 0 0 10px black;
+  background-color: #777;
+  padding: 1px;
+  text-align: left;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+   display: flex;
+  flex-direction: row;
+}
+footer h4, footer a {
+	padding-left:10px;
+}
+footer a {
+	color: white;
+}
+
+.nav-button, .nav-input, .custom-file-upload{
+	color: white;
+    padding: 10px;
+	text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    text-align: 100;
+    background-color: #666;
+	transition-duration: 0.4s;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
+    border-color: lightslategrey;
+	display:block;
+}
+.nav-button a {
+	color: white;
+    text-decoration: none;
+}
+
+.nav-button{
+	width:100%;
+}
+
+.nav-title-bar {
+	color: white;
+    text-align: center;
+}
+
+.submit-button{
+	margin-top:50px;
+}
+#click-photo:hover, #file:hover {
+background-color:rgba(238, 124, 101, 0.709);
+color:white;
+ cursor:pointer;
+}
+#classify:hover {
+background-color:rgba(238, 124, 101, 0.709);
+color:white;
+ cursor:pointer;
+}
+input[type="file"] {
+    display: none;
+}
+#file:active{
+  float:bottom;
+}
+.blur { 
+    backdrop-filter: blur(8px);
+	}
+.form-container {
+		width: fit-content;
+	}
+.custom-file-upload{
+	box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
+    border-color: lightslategrey;
+	display:block;
+	}
+.custom-file-upload:hover {
+background-color:rgba(238, 124, 101, 0.709);
+color:white;
+ cursor:pointer;
+}
+.load-file-form {
+	color: white;
+	text-align: center;
+}
+
+p1.blur {
+    font-family:fantasy ;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(2, 0, 0);
+}
+
+p1 {
+    font-family:Arial, Helvetica, sans-serif ;
+    font-size: 30px;
+    color: rgb(2, 0, 0);
+}
+
+p {
+    font-family:Arial,  Helvetica, sans-serif  ;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(2, 0, 0);
+}
+
+a.href {
+    font-family:Arial,  Helvetica, sans-serif  ;
+    font-size: 30px;
+    color: rgb(2, 0, 0);
+}
+
+article {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    margin: 100 auto;
+    margin-right: 2cm;
+  }
+
+
+div.images {
+    position: flex;
+    width: 100%;
+    height: 40%;
+  }
+
+div.photos1{
+    display: absolute;
+    width: 8cm;
+    height: 3cm;
+  }  
+div.photos2{
+    display: absolute;
+    width: 17cm;
+    height: 7cm;
+  }  
+  
+div.Tables {
+    display: flex;
+    width: 100%;
+    height: 650px;
+    overflow:visible 
+  } 
+section {
+    position:relative;
+    left: auto;
+    width: 100%;
+    height: 90%;
+  }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 1cm;
+    align-self: bottom;
+}

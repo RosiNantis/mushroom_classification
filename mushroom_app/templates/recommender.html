@@ -20,69 +20,80 @@
 <section class="fullWidthAndHeight">
 <nav class="blur">
 <div class="form-container">
-    <div class="text-wiki" style="text-align: center;height:520px;width:420px;border:4px solid black;overflow:auto;font-size: 30px;">
-        <h2> <u>Wikipedia summary</u> </h2>
-        <p class="text_wiki" id = "myText"> {{wiki_text}}</p>
+    <div class="text-wiki">
+        <h3> Wikipedia summary </h3>
+        <p id = "myText"> {{wiki_text}} </p>
     </div>
-    <div class="text-wiki" style="text-align: center;height:520px;width:420px;border:4px solid black;overflow:auto;font-size: 30px;">
-        <h2> <u>Abstract NLP</u> </h2>
+    <div class="text-wiki">
+        <h3> Abstract NLP </h3>
         <p class="text_abstract" id = "myText"> {{nlp_abstract}}</p>
     </div>
-    <div class="text-wiki" style="text-align: center;height:520px;width:420px;border:2px;overflow:auto;font-size: 30px;">
-        <p2> Wiki url. </p2>
+    <div class="text-wiki">
+        <p> Wiki url. </p>
         <div style="text-align: center;font-family: fantasy , sans-serif;overflow:auto;font-size: 30px;">
-        <a href={{wiki_url}}> <p1> - {{prediction[0]}} - </p1> </a>
+        <a href={{wiki_url}}> <p> - {{prediction[0]}} - </p> </a>
         </div>
     </div>
 </div>
 </nav>
-<article style="background-color: rgb(216, 225, 198);">
+<article>
 <div class="images" >
-        <h2 ><u>Side-by-Side Image Gallery</u ></h2>
+        <h2 >Side-by-Side Image Gallery</h2>
         <table >
             <tr>
-                <img src={{image_directory}} alt="test" width="350" height="350">            
-                <p1>Test image</p1>           
+			<figure class="figure">
+    <img class="image-element" src={{image_directory}} alt="test" width="350" height="350">
+    <figcaption class="figure-caption">Test imag</figcaption>
+</figure>
+                   
             </tr>
             <tr>         
-        
+        <figure class="figure">
             <a href={{wiki_url}}>
-                <img src={{wiki_image_url}} alt="wiki" width="350" height="350">
+                <img  class="image-element" src={{wiki_image_url}}  alt="wiki" width="350" height="350">
             </a>    
-            <p1>Wiki Prediction</p1>
+			<figcaption class="figure-caption">Wiki Prediction</figcaption>
+			</figure>
             </tr>
         </table>
 </div>
 <div class="Tables" >
-    <h2><u>Prediction Table</u></h2>
-    <table class="text-table" >
+    <h2>Prediction Table</h2>
+	<br>
+    <table class="text-table blur" >
+	<tr>
+	<th class="table-header">Mushroom Type</th>
+	<th class="table-header">Prediction</th>
+	</tr>
         <tr>
-            <p1>
-            <ul style="text-align: left;font-size: 30px;background-color: rgb(216, 225, 198);"> 
-                <p1><u>Mushroom Type</u></p1>
-                {% for predict in prediction %}
-                <li>{{predict}}</li>
-                {% endfor %}
-            </ul></p1>
+		 <td class="table-cell">{{result.type}}</td>
+		 <td class="table-cell">{{result.prediction}}</td>
         </tr>
-        <tr>
-            <p1>
-            <ul style="text-align:left;font-size: 30px;background-color: rgb(221, 230, 201);"> 
-                <p1><u>Prediction</u></p1>
-                {% for mushroom in kind %}
-                <li>{{mushroom}}</li>
-                {% endfor %}
-            </ul></p1>
+		<tr>
+		 <td class="table-cell"> {{result.type}}</td>
+		 <td class="table-cell">{{result.prediction}}</td>
         </tr>
+		<tr>
+		 <td class="table-cell">{{result.type}}</td>
+		 <td class="table-cell">{{result.prediction}}</td>
+        </tr>
+		<tr>
+		 <td class="table-cell">{{result.type}}</td>
+		 <td class="table-cell">{{result.prediction}}</td>
+        </tr>
+	
     </table>
-<div class = "back" style="text-align: left ; margin-right: 15cm; font-size: 30px; color: black;">
-    <a href='/'>Go Back to main page</a>
+
 </div>
+<div class = "back" >
+	<button class="nav-button">
+    <a href='/'>Go Back to main page</a>
+	</button>
 </div>
 </article>
 </section>
 <footer style="position: fixed; height: 1.4cm;">
-        <p1>Copyright &copy; 2022 Mush-Room app</p1>
+        <p class="copyright">Copyright &copy; 2022 Mush-Room app</p>
 </footer>
     
 </body>

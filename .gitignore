@@ -1,6 +1,7 @@
 data/**
 clean_data/**
 data_to_kaggle/**
+data_old/**
 models/**
 # Byte-compiled / optimized / DLL files
 __pycache__/
