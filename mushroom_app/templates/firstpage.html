@@ -16,43 +16,44 @@
   <header>
   <img class="image-icon" icon="68" src="../static/icons8-pilze-64.png"></img>
   <h2>{{name}}</h2>
-  </header>
+</header>
 <section class="fullWidthAndHeight">
 <nav class="blur">
 <div class="form-container">
 <div class="nav-title-bar">
 <h2 >Load image</h2>
 </div>
-      <form action="/camera"> <!--After clicking on submit button the routing is done on the /recommend-->
-        <button class="nav-button" id="click-photo" type="submit"> 
-		    <a href="#" id="start-camera" class="btn btn-white btn-animate">Start Camera</a>
-		    </button>
-        <!--script to add ENTER as a submit button as well-->
-      </form>
-      <!--Creating a form for the user to input values through the webpage-->
-      <form class="load-file-form" action="./recommender"> <!--After clicking on submit button the routing is done on the /recommend-->
-	<label class="custom-file-upload">
-	Select a file
-        <input class="nav-input" type="file" accept="image/*" id="file" name="test" >
-                <script>                
-                    input.addEventListener("keypress", function(event) {
-                      if (event.key === "Enter") {
-                        event.preventDefault();
-                        document.getElementById("myBtn").click();
-                      }
-                    });
-                </script>               
-    </label>
-		<br>
-		<span id="fileName"></span>
-		<br>
-		<button class="nav-button submit-button" id="classify" type="submit">Let's see what mushroom it is!!!</button>
+<form action="/camera"> <!--After clicking on submit button the routing is done on the /recommend-->
+  <button class="nav-button" id="click-photo" type="submit"> 
+<a href="#" id="start-camera" class="btn btn-white btn-animate">Start Camera</a>
+</button>
+  <!--script to add ENTER as a submit button as well-->
+</form>
+<!--Creating a form for the user to input values through the webpage-->
+<form class="load-file-form" action="./recommender"> <!--After clicking on submit button the routing is done on the /recommend-->
+<label class="custom-file-upload">
+Select a file
+  <input class="nav-input" type="file" accept="image/*" id="file" name="test" >
+          <script>
+              var input = document.getElementById("myInput");
+              input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("myBtn").click();
+                }
+              });
+          </script>
+  </label>
+<br>
+<span id="fileName"></span>
+<br>
+<button class="nav-button submit-button" id="classify" type="submit">Let's see what mushroom it is!!!</button>
 
-      </form></div>
+    </form></div>
 </nav>
-<article>
+  <article>
   <div class="video-container">
-  <video id="video" width="700" height="550" autoplay></video>
+  <video id="video" width="500" height="400" autoplay></video>
     <div id="dataurl-container">
         <canvas id="canvas" width="750" height="500"></canvas>
         <div id="dataurl-header">Image Data URL</div>
