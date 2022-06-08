@@ -1,0 +1,111 @@
+<!--Just type ! and press Enter to get a prefilled skeletal code of html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title> Mush-Room  </title> <!--Whatever is written under title is dispalyed on the tab of the webpage-->
+    <link rel="stylesheet" href="../static/style_first_page.css"/><!--linking css style sheet to html-->
+    <link rel="icon" href="data:,">
+</head>
+
+
+<body>
+  <header>
+  <img class="image-icon" icon="68" src="../static/icons8-pilze-64.png"></img>
+  <h2>{{name}}</h2>
+</header>
+<section class="fullWidthAndHeight">
+<nav class="blur">
+<div class="form-container">
+<div class="nav-title-bar">
+<h2 >Load image</h2>
+</div>
+<form action="/camera"> <!--After clicking on submit button the routing is done on the /recommend-->
+  <button class="nav-button" id="click-photo" type="submit"> 
+  <a href="#" id="start-camera" class="btn btn-white btn-animate">Start Camera</a>
+  </button>
+  <!--script to add ENTER as a submit button as well-->
+</form>
+<!--Creating a form for the user to input values through the webpage-->
+<form class="load-file-form" action="./recommender"> <!--After clicking on submit button the routing is done on the /recommend-->
+<label class="custom-file-upload">
+Select a file
+  <input class="nav-input" type="file" accept="image/*" id="file" name="test" >
+          <script>
+              var input = document.getElementById("myInput");
+              input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  document.getElementById("myBtn").click();
+                }
+              });
+          </script>
+</label>
+<br>
+<span id="fileName"></span>
+<br>
+<button class="nav-button submit-button" id="classify" type="submit">Let's see what mushroom it is!!!</button>
+
+    </form></div>
+</nav>
+  <article>
+  <div class="video-container">
+  <video id="video" width="500" height="400" autoplay></video>
+    <div id="dataurl-container">
+        <canvas id="canvas" width="750" height="500"></canvas>
+        <div id="dataurl-header">Image Data URL</div>
+        <textarea id="dataurl" readonly></textarea>
+    </div>
+	</div>
+  </article>
+</section>
+<footer>
+<h4> "Nature alone is antique, and the oldest art is a mushroom." </h4>
+  <a href="https://en.wikipedia.org/wiki/Thomas_Carlyle">
+  
+      <h4>
+          - Thomas Carlyle -
+      </h4>
+  </a>
+</footer>
+<script>
+document.getElementById("file").addEventListener("change", function(evt){
+document.getElementById("fileName").innerHTML = evt.target.files[0].name;
+});
+let camera_button = document.querySelector("#start-camera");
+    let video = document.querySelector("#video");
+    let click_button = document.querySelector("#click-photo");
+    let canvas = document.querySelector("#canvas");
+    let dataurl = document.querySelector("#dataurl");
+    let dataurl_container = document.querySelector("#dataurl-container");
+    
+    camera_button.addEventListener('click', async function() {
+           let stream = null;
+    
+        try {
+            stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        }
+        catch(error) {
+            alert(error.message);
+            return;
+        }
+    
+        video.srcObject = stream;
+    });
+
+
+    click_button.addEventListener('click', function() {
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+           let image_data_url = canvas.toDataURL('image/jpeg');
+        
+        dataurl.value = image_data_url;
+        dataurl_container.style.display = 'block';
+    });
+ 
+</script> 
+</body>
+
+</html>
