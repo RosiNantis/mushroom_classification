@@ -43,7 +43,7 @@
             <tr>
 			<figure class="figure">
     <img class="image-element" src={{image_directory}} alt="test" width="350" height="350">
-    <figcaption class="figure-caption">Test imag</figcaption>
+    <figcaption class="figure-caption">Test image</figcaption>
 </figure>
                    
             </tr>
@@ -66,20 +66,20 @@
 	<th class="table-header">Prediction</th>
 	</tr>
         <tr>
-		 <td class="table-cell">{{result.type}}</td>
-		 <td class="table-cell">{{result.prediction}}</td>
+		 <td class="table-cell">{{result['image_class'][0]}}</td>
+		 <td class="table-cell">{{result['probability(%)'][0]}}</td>
         </tr>
 		<tr>
-		 <td class="table-cell"> {{result.type}}</td>
-		 <td class="table-cell">{{result.prediction}}</td>
+        <td class="table-cell">{{result['image_class'][1]}}</td>
+        <td class="table-cell">{{result['probability(%)'][1]}}</td>
         </tr>
 		<tr>
-		 <td class="table-cell">{{result.type}}</td>
-		 <td class="table-cell">{{result.prediction}}</td>
+        <td class="table-cell">{{result['image_class'][2]}}</td>
+        <td class="table-cell">{{result['probability(%)'][2]}}</td>
         </tr>
 		<tr>
-		 <td class="table-cell">{{result.type}}</td>
-		 <td class="table-cell">{{result.prediction}}</td>
+        <td class="table-cell">{{result['image_class'][3]}}</td>
+        <td class="table-cell">{{result['probability(%)'][3]}}</td>
         </tr>
 	
     </table>

@@ -18,8 +18,9 @@ def mushroom_classification(image_dir ):
     direct = '../data/test/'
     image_dir = direct + str(image_dir)
     dataFram = image_classification(image_dir)
-    mushrooms_pred = dataFram.values.tolist()[:5]
-    return mushrooms_pred, dataFram.image_class, dataFram['probability(%)']
+    mushrooms_pred = dataFram.values.tolist()[:4]
+    mushrooms_pred_list = pd.DataFrame(dataFram)
+    return mushrooms_pred, dataFram.image_class, dataFram['probability(%)'], mushrooms_pred_list[:4]
 
 def mushroom_prediction(image_dir):
     """
@@ -40,4 +41,7 @@ def mushroom_depict(image_dir):
     #plt.imshow(item,cmap='Greys')
     return image_dir
 
-#mushrooms_pred, k, j = mushroom_classification('003_eIMrvDdKleY.jpg')
+# mushrooms_pred, k, j, df = mushroom_classification('003_eIMrvDdKleY.jpg')
+# print(df)
+# print(df['image_class'])
+# print(df['probability(%)'])
