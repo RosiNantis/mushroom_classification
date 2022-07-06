@@ -1,7 +1,7 @@
 # mushroom_recommendation
-An image recognition project where different Deep Learning models are deployed to be able to recognise the species of a mushrooms given in picture or from camera.
+An image recognition project where different Deep Learning models are deployed to be able to recognise the species of Fungis given in picture or from camera.
 
-where we create the final project for graduation from the SPICED ACADEMY, Data Science.
+This project was created as a final project for graduating from the SPICED ACADEMY, Data Science. 
 
 
 #### Mac installation
