@@ -3,6 +3,7 @@ An image recognition project where different Deep Learning models are deployed t
 
 This project was created as a final project for graduating from the SPICED ACADEMY, Data Science. 
 
+<img src="mushroom_app_gif.gif" width="1000"/>
 
 #### Mac installation
     pip install -r requirements.txt
