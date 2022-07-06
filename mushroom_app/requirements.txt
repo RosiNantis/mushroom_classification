@@ -1,8 +1,10 @@
 flask
 pandas
 numpy
-fuzzywuzzy
-rapidfuzz
-gunicorn
-pickle
-sklearn
+transformers
+random
+cv2
+os
+re
+tensorflow
+wikipedia
